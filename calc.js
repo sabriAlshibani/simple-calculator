@@ -7,7 +7,7 @@ function calculator() {
     let y = num2.value
     let o = opera.value
 
-console.log('y: ', y, `x :`, x, `o:`, o)
+    console.log('y: ', y, `x :`, x, `o:`, o)
 
     let result;
     switch (o) {
@@ -20,11 +20,16 @@ console.log('y: ', y, `x :`, x, `o:`, o)
             document.querySelector("#result").innerHTML = result;
 
             break;
-            case "/":
+        case "/":
+            if (y !== 0) {
+                result = x / y;
                 document.querySelector("#result").innerHTML = result;
-
-                default:     
-                document.querySelector("#result").innerHTML = "not found";
+            } else {
+                document.querySelector("#result").innerHTML = " enter correct number";
+            }
+            break;
+        default:
+            document.querySelector("#result").innerHTML = "not found";
 
 
     }
